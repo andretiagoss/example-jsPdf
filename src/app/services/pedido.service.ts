@@ -21,10 +21,12 @@ export class PedidoService{
                 doc.addPage();
             };
 
+            //HEADER
             doc.setFontSize(12);
             doc.text('Listagem do pedido ' + pedido.id,10,10);
             doc.line(10, 12, 195, 12);
 
+            //BODY
             doc.setFontSize(10);
             doc.text('Pedido: ' + pedido.id,15,20);
             doc.text('Data da Compra: ' + pedido.dataCompra,100,20);
@@ -49,9 +51,11 @@ export class PedidoService{
 
             qtdePagina++;
 
+            //FOOTER
             doc.text(170,285, 'Pagina: ' + qtdePagina);
         });
 
+        doc.autoPrint();
         doc.save('jsPDF.pdf');        
     }
 }
