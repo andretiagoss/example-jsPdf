@@ -67,8 +67,8 @@ export class AppComponent implements OnInit{
     ];
   }
 
-  gerarPDF(){
-    console.log('Gerando PDF...');
-    this.pedidoService.gerarPDF(this.pedido);
+  imprimir(){
+    console.log('método imprimir executado...');
+    this.pedidoService.imprimir(this.pedido);
   };
 }

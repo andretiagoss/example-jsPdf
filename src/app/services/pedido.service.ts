@@ -9,7 +9,7 @@ export class PedidoService{
     //REF: https://parall.ax/products/jspdf
     //     https://codepen.io/someatoms/pen/adojWy
 
-    gerarPDF(listaPedidos: Pedido[]){
+    imprimir(listaPedidos: Pedido[]){
         const doc = new jsPDF();
         const colunasGridItens = ["Codigo", "Nome", "Qtde", "Preço", "Total" ];
         var linhasGridItens = [];
@@ -56,6 +56,6 @@ export class PedidoService{
         });
 
         doc.autoPrint();
-        doc.save('jsPDF.pdf');        
+        window.open(doc.output('bloburl'));
     }
 }
